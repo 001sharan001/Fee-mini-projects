@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meme</title>
+</head>
+<style>         
+    *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#222;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    font-family:Impact, sans-serif;
+}
+
+.meme-container{
+    position:relative;
+    width:450px;
+}
+
+.meme-container img{
+    width:100%;
+    border-radius:10px;
+}
+
+.text{
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
+    width:90%;
+    text-align:center;
+
+    color:white;
+    font-size:32px;
+    text-transform:uppercase;
+    font-weight:bold;
+
+    text-shadow:
+        2px 2px 0 black,
+       -2px -2px 0 black,
+        2px -2px 0 black,
+       -2px 2px 0 black,
+        4px 4px 8px black;
+}
+
+.top{
+    top:20px;
+}
+
+.bottom{
+    bottom:20px;
+}
+    </style>
+<body>
+
+<div class="meme-container">
+
+    <img src="https://t4.ftcdn.net/jpg/07/08/85/61/240_F_708856172_4P9FheZNd271cjAX7ZbWpFUncd8sPLJg.jpg" alt="IMAGE">
+
+    <div class="text top">
+        WHEN THE CODE WORKS  
+    </div>
+
+    <div class="text bottom">
+        WITHOUT STACK OVERFLOW 😎    
+    </div>
+
+</div>
+
+</body>
+</html>
