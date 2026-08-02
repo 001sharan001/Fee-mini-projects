@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel = "stylesheet" href = "todo.css">
+</head>
+<body>
+<button id = "themeToggle">🌙</button>
+
+
+<div class = "container">
+    <h1>My to-do list</h1>
+    <div class = "input-box">
+        <input type = "text" id = "taskinput" placeholder = "Enter a task">
+        <select id="taskMood">
+            <option value="😊">😊 Easy</option>
+            <option value="😓">😓 Difficult</option>
+            <option value="😴">😴 Later</option>
+            <option value="🔥">🔥 Urgent</option>
+            <option value="🎯">🎯 Important</option>
+        </select>
+        <input type = "date" id = "dueDate">
+        <input type = "time" id = "dueTime">
+        <button onclick = "addTask()">Add</button>
+    </div>
+    <ul id = "taskList"></ul>
+</div>
+
+<script src = "todo.js"></script>
+</body>
+</html>       
+

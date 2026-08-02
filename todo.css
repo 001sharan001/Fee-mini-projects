@@ -1,0 +1,108 @@
+body {
+    background : #f4f5f5;
+    font-family : Arial;
+}
+body.dark {
+    background-color: #121212;
+}
+
+.container {
+    width : 400px;
+    margin : 50px auto;
+    background : rgb(124, 156, 179);
+    padding : 20px;
+    border-radius : 10px;
+}
+h1 {
+    text-align : center;
+}
+.input-box {
+    display : flex;
+    flex-wrap : wrap;
+    gap : 10px;
+    justify-content: center;
+}
+.input-box input{
+    padding:10px;
+    border-radius:6px;
+    border:1px solid #ccc;
+    font-size:16px;
+}
+
+#taskinput{
+    width:250px;
+}
+#taskMood{
+    padding:10px;
+    border-radius:8px;
+    border:1px solid #ccc;
+    font-size:15px;
+    cursor:pointer;
+}
+
+.task-title{
+    font-size:18px;
+    font-weight:bold;
+}
+.input-box button{
+    padding:10px 20px;
+    cursor:pointer;
+}
+
+#taskList{
+    list-style:none;
+    padding:0;
+    margin-top:20px;
+}
+
+#taskList li{
+    background:white;
+    margin:10px 0;
+    padding:15px;
+    border-radius:10px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    box-shadow:0px 3px 8px rgba(0,0,0,0.15);
+}
+
+.task-info{
+    display:flex;
+    flex-direction:column;
+}
+
+.due{
+    color:#555;
+    font-size:14px;
+}
+
+.overdue{
+    color:red;
+    font-weight:bold;
+}
+
+input {
+    flex : 1;
+    padding : 10px;
+}
+button {
+    padding : 10px 20px;
+    cursor : pointer;
+}
+ul {
+    list-style : none;
+    padding : 0;
+    margin-top : 20px;
+}
+li {
+    display : flex;
+    justify-content : space-between;
+    align-items : center;
+    background : #e4ecaf;
+    padding : 10px;
+    border-radius : 5px;
+}
+.completed {
+    text-decoration : line-through;
+    color : gray;
+}
