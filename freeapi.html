@@ -1,0 +1,122 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Book Finder</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #e8f0fe;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .box {
+            width: 350px;
+            background: white;
+            padding: 25px;
+            text-align: center;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px gray;
+        }
+
+        img {
+            width: 180px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin-top: 15px;
+            border: none;
+            border-radius: 8px;
+            background: blue;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+
+    <img id="image" src="" alt="Book">
+
+    <h2 id="bookTitle">Loading...</h2>
+
+    <p id="bookAuthor"></p>
+
+    <p id="bookPublisher"></p>
+
+    <button id="nextBtn">Next Book</button>
+
+</div>
+
+<script>
+
+function loadBook() {
+
+    fetch("https://api.freeapi.app/api/v1/public/books")
+
+        .then(function(response) {
+
+            return response.json();
+
+        })
+
+        .then(function(result) {
+
+            const books = result.data.data;
+
+            const index =
+                Math.floor(Math.random() * books.length);
+
+            const book = books[index];
+
+            const info = book.volumeInfo;
+
+            document.getElementById("image").src =
+                info.imageLinks?.thumbnail || "";
+
+            document.getElementById("bookTitle").innerText =
+                info.title || "No title available";
+
+            document.getElementById("bookAuthor").innerText =
+                "Author: " +
+                (info.authors?.join(", ") || "Unknown");
+
+            document.getElementById("bookPublisher").innerText =
+                "Publisher: " +
+                (info.publisher || "Unknown");
+
+        })
+
+        .catch(function(error) {
+
+            console.log(error);
+
+            document.getElementById("bookTitle").innerText =
+                "Something went wrong";
+
+        });
+}
+
+document.getElementById("nextBtn")
+    .addEventListener("click", loadBook);
+
+loadBook();
+
+</script>
+
+</body>
+</html>
+```
